@@ -1,0 +1,51 @@
+.category-container {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  .side-category {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    color: gray;
+    div {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .active {
+      // text-decoration: underline;
+      // text-decoration-color: #f02d34;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+      font-weight: 600;
+    }
+  }
+  .product-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px 15px;
+    .product-image {
+      width: 100px !important;
+    }
+    div > div > div {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    .card-wrapper {
+      position: relative;
+      .button {
+        position: absolute;
+        top: 1px;
+        background: #f02d34;
+        border: 0px;
+        width: 85px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 15px 0px 15px 0px;
+        color: #eee;
+      }
+    }
+  }
+}
