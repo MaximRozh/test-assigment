@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { FC, useMemo } from "react";
 import Link from "next/link";
 import { AiOutlineShopping } from "react-icons/ai";
 import { Cart } from ".";
@@ -8,7 +8,7 @@ import { openCart } from "../store/cart";
 import { ProductInterface } from "../types/Product";
 import Search from "./Search";
 
-const Navbar = () => {
+const Navbar: FC = () => {
   const { showCart, cartItems } = useAppSelector((state) => state.cart);
 
   const dispatch = useAppDispatch();

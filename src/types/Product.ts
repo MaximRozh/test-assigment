@@ -10,9 +10,9 @@ type Asset = {
 export interface ImageInterface {
   asset: Asset;
   _key: string;
-  _type: string;
-  crop: any;
-  hotspot: any;
+  _type?: string;
+  crop?: any;
+  hotspot?: any;
 }
 
 export interface BannerInterface {

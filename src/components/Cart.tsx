@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { FC, useMemo } from "react";
 
 import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
 import toast from "react-hot-toast";
@@ -9,7 +9,7 @@ import { closeCart, removeFromCart, updateCart } from "../store/cart";
 import CartItem from "./CartItem";
 import { ProductInterface } from "../types/Product";
 
-const Cart = () => {
+const Cart: FC = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
 
   const dispatch = useAppDispatch();
@@ -39,7 +39,8 @@ const Cart = () => {
 
     stripe.redirectToCheckout({ sessionId: data.id });
   };
-  const handleChanhgeQuntity = (product, type) => {
+
+  const handleChanhgeQuntity = (product: ProductInterface, type: string) => {
     if (type === "dec" && product.quantity === 1) return;
 
     const newQuantity =
@@ -51,7 +52,7 @@ const Cart = () => {
 
     dispatch(updateCart(updated));
   };
-  const handleRemoveItem = (id: string) => {
+  const handleRemoveItem = (id: number) => {
     dispatch(removeFromCart(id));
   };
   return (

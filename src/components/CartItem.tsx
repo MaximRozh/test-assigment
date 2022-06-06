@@ -1,9 +1,21 @@
-import React from "react";
+import React, { FC } from "react";
 import { AiOutlineClose, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import style from "../styles/Cart.module.scss";
+import { ProductInterface } from "../types/Product";
 import SanityImage from "./SanityImage";
 
-const CartItem = ({ item, handleChanhgeQuntity, handleRemoveItem }) => {
+interface CartItemProp {
+  item: ProductInterface;
+  handleChanhgeQuntity: (product: ProductInterface, type: string) => void;
+  handleRemoveItem: (id: number) => void;
+}
+
+const CartItem: FC<CartItemProp> = ({
+  item,
+  handleChanhgeQuntity,
+  handleRemoveItem,
+}) => {
+  console.log(item.image[0]);
   const price = item.quantity * item.price;
   return (
     <div className={style["product"]} key={item._id}>

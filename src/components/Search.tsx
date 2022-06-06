@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
 import style from "../styles/Search.module.scss";
 import { BiSearchAlt2 } from "react-icons/bi";
 
-const Search = () => {
+const Search: FC = () => {
   const router = useRouter();
   // const [searchQuery, setSearchQuery] = useState("");
 

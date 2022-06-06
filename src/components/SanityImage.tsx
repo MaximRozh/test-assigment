@@ -1,9 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import Img from "next/image";
 import { client } from "../lib/client";
 import { useNextSanityImage } from "next-sanity-image";
+import { ImageInterface } from "../types/Product";
 
-const SanityImage = ({
+interface SanityImageProp {
+  imageData: ImageInterface;
+  layout?: "intrinsic" | "fixed" | "fill" | "responsive" | "raw";
+  className?: string;
+  alt: string;
+}
+
+const SanityImage: FC<SanityImageProp> = ({
   imageData,
   layout = "intrinsic",
   className = "",

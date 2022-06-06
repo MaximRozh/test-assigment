@@ -1,15 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import Head from "next/head";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import style from "../styles/Layout.module.scss";
-
-const Layout = ({ children }) => {
+interface LayoutProp {
+  children: React.ReactNode;
+}
+const Layout: FC<LayoutProp> = ({ children }) => {
   return (
     <div className={style["layout"]}>
       <Head>
         <title>Store</title>
       </Head>
+      W
       <header className={style["header"]}>
         <NavBar />
       </header>

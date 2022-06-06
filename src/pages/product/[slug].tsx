@@ -7,7 +7,7 @@ import { default as FastMarquee } from "react-fast-marquee";
 import { addProductToCart, openCart } from "../../store/cart";
 import { useAppDispatch } from "../../hooks";
 import toast from "react-hot-toast";
-import { NextPage } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ProductInterface } from "../../types/Product";
 interface ProductDetailsProp {
   product: ProductInterface;
@@ -122,7 +122,7 @@ const ProductDetails: NextPage<ProductDetailsProp> = ({
   );
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths:GetStaticPaths = async () => {
   const query = `*[_type == "product"] {
         slug {
             current
@@ -141,7 +141,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps:GetStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "product"]';
 
