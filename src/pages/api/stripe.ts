@@ -1,8 +1,6 @@
 import Stripe from "stripe";
 
-const idStripe =
-  process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY ||
-  "sk_test_51Kyv4qJLtNQoiNqY9hR8x3DOKqUgUbgfJjb30J3kkVdqGdaJk9xjMBPj6X0N8qL80CluDwAHcMJCiqPvQsdQr3P200TmZO13ql";
+const idStripe = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY;
 const stripe = new Stripe(idStripe, {
   apiVersion: "2020-08-27",
 });
