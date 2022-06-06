@@ -35,7 +35,7 @@ const Navbar: FC = () => {
       <Search />
       <h4>
         <Link href="/category">
-          <a>Categoty</a>
+          <a>Category</a>
         </Link>
       </h4>
       <button

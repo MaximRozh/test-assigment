@@ -12,7 +12,6 @@ const Layout: FC<LayoutProp> = ({ children }) => {
       <Head>
         <title>Store</title>
       </Head>
-      W
       <header className={style["header"]}>
         <NavBar />
       </header>
