@@ -11,7 +11,7 @@ const Porducts: FC<ProductsProp> = ({ products }) => {
   return (
     <>
       <div className={style["products-heading"]}>
-        <h2>Best Selling Produncts</h2>
+        <h2>Best Selling Products</h2>
         <p>Speakers of many var</p>
       </div>
       <div className={style["products-container"]}>
