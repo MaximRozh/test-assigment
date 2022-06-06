@@ -10,7 +10,6 @@ interface HomeProps {
 }
 
 const IndexPage: FC<HomeProps> = ({ products, bannerData }) => {
-  console.log(bannerData);
   return (
     <>
       <HeroBanner heroBanner={bannerData} />
