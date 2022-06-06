@@ -2,12 +2,12 @@
 
 .footer-banner-container {
   padding: 50px 30px;
-  background-color: #f02d34;
+  background-color: $secondary;
   border-radius: 15px;
   position: relative;
   height: auto;
   line-height: 1;
-  color: white;
+  color: $body_color;
   width: 100%;
   margin-top: 120px;
   @media (max-width: $medium) {
@@ -28,7 +28,7 @@
     button {
       border-radius: 15px;
       padding: 10px 16px;
-      background-color: white;
+      background-color: $body_color;
       color: red;
       border: none;
       margin-top: 40px;
@@ -48,6 +48,7 @@
       }
     }
     .footer-banner-image {
+      transform: scaleX(-1);
       display: flex;
       align-items: center;
       width: 550px;

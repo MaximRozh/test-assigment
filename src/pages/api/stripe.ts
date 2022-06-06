@@ -7,7 +7,6 @@ const stripe = new Stripe(idStripe, {
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log(req.body);
     try {
       const params: Stripe.Checkout.SessionCreateParams = {
         submit_type: "pay",

@@ -27,8 +27,6 @@
       list-style-type: none;
     }
     .active {
-      // text-decoration: underline;
-      // text-decoration-color: #f02d34;
       box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
       font-weight: 600;
     }
@@ -59,7 +57,7 @@
       .button {
         position: absolute;
         top: 1px;
-        background: #f02d34;
+        background: $secondary;
         border: 0px;
         width: 85px;
         cursor: pointer;

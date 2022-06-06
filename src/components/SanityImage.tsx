@@ -16,7 +16,6 @@ const SanityImage = ({
       // @ts-ignore: Unreachable code error
       {...imageProps}
       layout={layout}
-      objectFit="cover"
       className={className}
       alt={alt}
     />

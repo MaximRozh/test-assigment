@@ -53,6 +53,7 @@ const ProductDetails: NextPage<ProductDetailsProp> = ({
               <SanityImage
                 imageData={image[index] ? image[index] : image[0]}
                 alt="product-detail-image"
+                className={style["single-product-image"]}
               />
             </div>
           </div>
