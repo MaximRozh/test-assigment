@@ -198,6 +198,15 @@
       height: auto;
       gap: 25px;
       margin-left: 25px;
+      div {
+        width: 115px;
+        height: 115px;
+        p {
+          &:nth-child(3n) {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

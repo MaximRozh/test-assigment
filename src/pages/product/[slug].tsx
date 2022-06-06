@@ -98,13 +98,6 @@ const ProductDetails = ({ product, products }) => {
       <div className={style["maylike-products-wrapper"]}>
         <h2>You may also like</h2>
         <div className={style["marquee"]}>
-          {/* <div
-            className={`${style["maylike-products-container"]} ${style["track"]}`}
-          > */}
-          {/* {mayLikeProduct.map((item) => (
-              <Product key={item._id} product={item} />
-            ))} */}
-
           <FastMarquee
             gradient={false}
             className={`${style["maylike-products-container"]}`}
@@ -113,7 +106,6 @@ const ProductDetails = ({ product, products }) => {
               <Product key={item._id} product={item} />
             ))}
           </FastMarquee>
-          {/* </div> */}
         </div>
       </div>
     </>
