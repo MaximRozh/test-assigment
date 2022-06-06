@@ -5,7 +5,7 @@ import cartReducer from "../store/cart";
 
 export function makeStore() {
   return configureStore({
-    reducer: { counter: counterReducer, cart: cartReducer },
+    reducer: { cart: cartReducer },
   });
 }
 

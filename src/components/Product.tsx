@@ -1,9 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import SanityImage from "./SanityImage";
 import style from "../styles/Products.module.scss";
+import { ProductInterface } from "../types/Product";
 
-const Product = ({ product: { image, name, slug, price } }) => {
+interface ProductProp {
+  product: ProductInterface;
+}
+
+const Product: FC<ProductProp> = ({
+  product: { image, name, slug, price },
+}) => {
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
@@ -11,9 +18,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
           <div className={style["product-image"]}>
             <SanityImage imageData={image && image[0]} alt="product-image" />
           </div>
-          <p className={style["product-name"]} title={name}>
-            {name}
-          </p>
+          <p className={style["product-name"]}>{name}</p>
           <p className={style["product-price"]}>${price}</p>
         </div>
       </Link>

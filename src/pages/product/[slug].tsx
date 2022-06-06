@@ -7,8 +7,17 @@ import { default as FastMarquee } from "react-fast-marquee";
 import { addProductToCart, openCart } from "../../store/cart";
 import { useAppDispatch } from "../../hooks";
 import toast from "react-hot-toast";
+import { NextPage } from "next";
+import { ProductInterface } from "../../types/Product";
+interface ProductDetailsProp {
+  product: ProductInterface;
+  products: ProductInterface[];
+}
 
-const ProductDetails = ({ product, products }) => {
+const ProductDetails: NextPage<ProductDetailsProp> = ({
+  product,
+  products,
+}) => {
   const { image, name, price, details } = product;
   const dispatch = useAppDispatch();
 

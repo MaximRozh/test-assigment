@@ -1,8 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import Product from "./Product";
 import style from "../styles/Products.module.scss";
+import { ProductInterface } from "../types/Product";
 
-const Porducts = ({ products }) => {
+interface ProductsProp {
+  products: ProductInterface[];
+}
+
+const Porducts: FC<ProductsProp> = ({ products }) => {
   return (
     <>
       <div className={style["products-heading"]}>

@@ -1,3 +1,4 @@
+import { GetServerSideProps, NextPage } from "next";
 import React, { useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import { Product } from "../components";
@@ -5,8 +6,13 @@ import { useAppDispatch } from "../hooks";
 import { client } from "../lib/client";
 import { addProductToCart } from "../store/cart";
 import style from "../styles/Category.module.scss";
+import { ProductInterface } from "../types/Product";
 
-const Category = ({ products }) => {
+interface CategoryProp {
+  products: ProductInterface[];
+}
+
+const Category: NextPage<CategoryProp> = ({ products }) => {
   const [selectedFilter, setSelectedFilter] = useState("All");
   const dispatch = useAppDispatch();
 
@@ -28,7 +34,7 @@ const Category = ({ products }) => {
   }, [selectedFilter]);
 
   const categories = products.reduce(
-    (acc: any, next: any) => {
+    (acc, next) => {
       if (!acc.includes(next.device)) {
         acc.push(next.device);
       }
@@ -39,17 +45,17 @@ const Category = ({ products }) => {
 
   return (
     <div className={style["category-container"]}>
-      <div className={style["side-category"]} onClick={handleSelect}>
+      <ul className={style["side-category"]} onClick={handleSelect}>
         {categories.map((item: string) => (
-          <div
+          <li
             key={item}
             aria-label={item}
             className={selectedFilter === item ? style["active"] : ""}
           >
             {item}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className={style["product-container"]}>
         {filteredProducts.map((item) => (
           <div className={style["card-wrapper"]} key={item._id}>
@@ -66,7 +72,7 @@ const Category = ({ products }) => {
 
 export default Category;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const query =
     '*[_type == "product"]{image, name, slug, price, _id, mark, device}';
   const products = await client.fetch(query);

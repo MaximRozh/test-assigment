@@ -1,9 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import SanityImage from "./SanityImage";
 import style from "../styles/HeroBanner.module.scss";
+import { BannerInterface } from "../types/Product";
 
-const HeroBanner = ({ heroBanner }) => {
+interface HeroBannerProp {
+  heroBanner: BannerInterface;
+}
+
+const HeroBanner: FC<HeroBannerProp> = ({ heroBanner }) => {
   return (
     <div className={style["hero-banner-container"]}>
       <div className={style["hero-banner-content"]}>

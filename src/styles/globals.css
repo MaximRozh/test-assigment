@@ -10,6 +10,9 @@ body,
 ::-webkit-scrollbar {
   width: 0px;
 }
+body {
+  background: #edf2f4;
+}
 
 a {
   color: inherit;

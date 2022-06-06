@@ -1,14 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import SanityImage from "./SanityImage";
 import style from "../styles/FooterBanner.module.scss";
+import { BannerInterface } from "../types/Product";
 
-const FooterBanner = ({
+interface FooterBannerProp {
+  footerBanner: BannerInterface;
+}
+
+const FooterBanner: FC<FooterBannerProp> = ({
   footerBanner: {
-    discount,
     largeText1,
-    largeText2,
-    saleTime,
     smallText,
     midText,
     desc,
@@ -21,10 +23,10 @@ const FooterBanner = ({
     <div className={style["footer-banner-container"]}>
       <div className={style["banner-desc"]}>
         <div className={style["left"]}>
-          <p>{discount}</p>
+          {/* <p>{discount}</p> */}
           <h3>{largeText1}</h3>
-          <h3>{largeText2}</h3>
-          <p>{saleTime}</p>
+          {/* <h3>{largeText2}</h3> */}
+          {/* <p>{saleTime}</p> */}
         </div>
         <div className={style["footer-banner-image"]}>
           <SanityImage imageData={image} alt="footer-banner-image" />

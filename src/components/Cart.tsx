@@ -7,6 +7,7 @@ import style from "../styles/Cart.module.scss";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { closeCart, removeFromCart, updateCart } from "../store/cart";
 import CartItem from "./CartItem";
+import { ProductInterface } from "../types/Product";
 
 const Cart = () => {
   const { cartItems } = useAppSelector((state) => state.cart);
@@ -17,7 +18,7 @@ const Cart = () => {
   };
 
   const totalPrice = useMemo(() => {
-    return cartItems.reduce((acc: any, next: any) => {
+    return cartItems.reduce((acc: number, next: ProductInterface) => {
       return acc + next.quantity * next.price;
     }, 0);
   }, [cartItems]);
@@ -38,7 +39,7 @@ const Cart = () => {
 
     stripe.redirectToCheckout({ sessionId: data.id });
   };
-  const handleChanhgeQuntity = (product: any, type: string) => {
+  const handleChanhgeQuntity = (product, type) => {
     if (type === "dec" && product.quantity === 1) return;
 
     const newQuantity =
@@ -50,7 +51,7 @@ const Cart = () => {
 
     dispatch(updateCart(updated));
   };
-  const handleRemoveItem = (id: any) => {
+  const handleRemoveItem = (id: string) => {
     dispatch(removeFromCart(id));
   };
   return (

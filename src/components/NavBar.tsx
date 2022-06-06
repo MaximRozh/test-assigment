@@ -5,6 +5,7 @@ import { Cart } from ".";
 import style from "../styles/NavBar.module.scss";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { openCart } from "../store/cart";
+import { ProductInterface } from "../types/Product";
 
 const Navbar = () => {
   const { showCart, cartItems } = useAppSelector((state) => state.cart);
@@ -15,7 +16,11 @@ const Navbar = () => {
   };
 
   const totalInCart = useMemo(
-    () => cartItems.reduce((acc: number, next: any) => acc + next.quantity, 0),
+    () =>
+      cartItems.reduce(
+        (acc: number, next: ProductInterface) => acc + next.quantity,
+        0
+      ),
     [cartItems]
   );
 
