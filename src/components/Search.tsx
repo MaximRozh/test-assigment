@@ -40,7 +40,7 @@ const Search: FC = () => {
           defaultValue={router.query.q}
           onKeyUp={handleKeyUp}
         />
-        <button type="button" onClick={handleClick}>
+        <button type="button" aria-label="searc" onClick={handleClick}>
           {<BiSearchAlt2 />}
         </button>
       </div>

@@ -25,7 +25,7 @@ const HeroBanner: FC<HeroBannerProp> = ({ heroBanner }) => {
             <button type="button">{heroBanner.buttonText}</button>
           </Link>
           <div className={style["desc"]}>
-            <h5>{heroBanner.desc}</h5>
+            <h3>{heroBanner.desc}</h3>
           </div>
         </div>
       </div>
