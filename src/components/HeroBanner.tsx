@@ -14,18 +14,21 @@ const HeroBanner: FC<HeroBannerProp> = ({ heroBanner }) => {
       <div className={style["hero-banner-content"]}>
         <div className={style["hero-banner-text"]}>
           <p className={style["beats-solo"]}>{heroBanner.smallText}</p>
-          <h3>{heroBanner.midText}</h3>
-          <h1>{heroBanner.largeText1}</h1>
+          <h3>{heroBanner?.midText}</h3>
+          <h1>{heroBanner?.largeText1}</h1>
         </div>
         <div className={style["hero-banner-image"]}>
-          <SanityImage imageData={heroBanner.image} alt="footer-banner-image" />
+          <SanityImage
+            imageData={heroBanner?.image}
+            alt="footer-banner-image"
+          />
         </div>
         <div>
-          <Link href={`product/${heroBanner.product}`}>
-            <button type="button">{heroBanner.buttonText}</button>
+          <Link href={`product/${heroBanner?.product}`}>
+            <button type="button">{heroBanner?.buttonText}</button>
           </Link>
           <div className={style["desc"]}>
-            <h3>{heroBanner.desc}</h3>
+            <h3>{heroBanner?.desc}</h3>
           </div>
         </div>
       </div>

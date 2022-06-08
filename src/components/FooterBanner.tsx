@@ -8,17 +8,10 @@ interface FooterBannerProp {
   footerBanner: BannerInterface;
 }
 
-const FooterBanner: FC<FooterBannerProp> = ({
-  footerBanner: {
-    largeText1,
-    smallText,
-    midText,
-    desc,
-    product,
-    buttonText,
-    image,
-  },
-}) => {
+const FooterBanner: FC<FooterBannerProp> = ({ footerBanner }) => {
+  if (!footerBanner) return;
+  const { largeText1, smallText, midText, desc, product, buttonText, image } =
+    footerBanner;
   return (
     <div className={style["footer-banner-container"]}>
       <div className={style["banner-desc"]}>

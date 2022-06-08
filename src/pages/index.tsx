@@ -23,11 +23,18 @@ export default IndexPage;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const query = '*[_type == "product"]{image, name, slug, price, _id}';
-  const products = await client.fetch(query);
-
   const bannerQuery = `*[_type == "banner"][0]{midText, smallText, largeText1, image, product,buttonText, desc}`;
 
-  const bannerData = await client.fetch(bannerQuery);
+  let products = null;
+  let bannerData = null;
+
+  try {
+    products = await client.fetch(query);
+    bannerData = await client.fetch(bannerQuery);
+  } catch (e) {
+    console.log(e);
+  }
+
   return {
     props: { products, bannerData },
   };

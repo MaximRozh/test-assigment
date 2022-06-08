@@ -122,7 +122,7 @@ const ProductDetails: NextPage<ProductDetailsProp> = ({
   );
 };
 
-export const getStaticPaths:GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const query = `*[_type == "product"] {
         slug {
             current
@@ -141,7 +141,7 @@ export const getStaticPaths:GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps:GetStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
   const productsQuery = '*[_type == "product"]';
 

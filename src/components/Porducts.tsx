@@ -15,9 +15,10 @@ const Porducts: FC<ProductsProp> = ({ products }) => {
         <p>Speakers of many var</p>
       </div>
       <div className={style["products-container"]}>
-        {products?.slice(0, 4).map((item) => (
-          <Product key={item._id} product={item} />
-        ))}
+        {products &&
+          products
+            ?.slice(0, 4)
+            .map((item) => <Product key={item._id} product={item} />)}
       </div>
     </>
   );
