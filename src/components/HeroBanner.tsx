@@ -13,7 +13,7 @@ const HeroBanner: FC<HeroBannerProp> = ({ heroBanner }) => {
     <div className={style["hero-banner-container"]}>
       <div className={style["hero-banner-content"]}>
         <div className={style["hero-banner-text"]}>
-          <p className={style["beats-solo"]}>{heroBanner.smallText}</p>
+          <p className={style["beats-solo"]}>{heroBanner?.smallText}</p>
           <h3>{heroBanner?.midText}</h3>
           <h1>{heroBanner?.largeText1}</h1>
         </div>
